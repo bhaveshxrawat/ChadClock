@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "Kollektif";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Kollektif Regular"),
+    url("assets/fonts/Kollektif.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Kollektif";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Kollektif Bold"),
+    url("assets/fonts/Kollektif-Bold.woff") format("woff");
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:where(h1, figure, body, ul, p, hr) {
+  margin: 0;
+}
+@property --degPrimary {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+body {
+  font-family: "Kollektif", sans-serif;
+  background-color: white;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  border: 0;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.hero__section {
+  height: 100vh;
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-content: left;
+  overflow: hidden;
+}
+.hero__section::before {
+  content: "";
+  position: absolute;
+  transform-origin: center;
+  inset: 0;
+  pointer-events: none;
+  background-image: conic-gradient(
+    from var(--degPrimary) at 50% 50%,
+    #56008a 0deg,
+    #ffffff 360deg
+  );
+  animation: ticktock 60000ms steps(60) forwards infinite;
+}
+/* @keyframes ticktock {
+  from {
+    transform: rotate(0deg) scale(5);
+  }
+  to {
+    transform: rotate(360deg) scale(5);
+  }
+} */
+@keyframes ticktock {
+  from {
+    --degPrimary: 0deg;
+  }
+  to {
+    --degPrimary: 360deg;
+  }
+}
+.h__s-container {
+  max-width: 508px;
+  width: 90%;
+  margin: auto auto auto 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  align-items: flex-start;
+}
+h1 {
+  font-weight: 700;
+  font-size: 6.25rem;
+  line-height: 119px;
+}
+.h__s-container p {
+  font-size: 1.625rem;
+  line-height: 31px;
+}
+.h__s-container button {
+  padding: 1rem;
+  font-size: 1.375rem;
+  color: white;
+  line-height: 31px;
+  background-color: #9159b3;
+  border-radius: 12px;
+  position: relative;
+}
+.h__s-container > *:not(button) {
+  color: #059500;
+  mix-blend-mode: difference;
+}
