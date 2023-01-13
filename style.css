@@ -93,26 +93,27 @@ header {
   flex-direction: column;
   gap: 23px;
   align-items: flex-start;
+  position: relative;
 }
 h1 {
   font-weight: 700;
-  font-size: 6.25rem;
-  line-height: 119px;
+  font-size: clamp(5.75rem, 14vw + 1rem, 6.625rem);
+  line-height: 1.12;
 }
 .h__s-container p {
   font-size: 1.625rem;
-  line-height: 31px;
+  line-height: 1.19;
 }
 .h__s-container button {
   padding: 1rem;
   font-size: 1.375rem;
   color: white;
-  line-height: 31px;
+  line-height: 1.19;
   background-color: #9159b3;
   border-radius: 12px;
   position: relative;
 }
 .h__s-container > *:not(button) {
-  color: #059500;
-  mix-blend-mode: difference;
+  color: white;
+  text-shadow: 0 0 0.26em rgba(0,0,0,0.4);
 }
